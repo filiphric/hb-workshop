@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "es5",
+      "dom"
+    ],
+    "types": [
+      "cypress",
+      "node"
+    ],
+    "baseUrl": "./",
+    "paths": {
+      "@fixtures/*": [
+        "./cypress/fixtures/*"
+      ],
+      "@scripts/*": [
+        "./cypress/scripts/*"
+      ],
+      "@support/*": [
+        "./cypress/support/*"
+      ]
+    },
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true
+  },
+  "include": [
+    "cypress/**/*.ts"
+  ],
+  "exclude": [
+    "trelloapp/*"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "hb-workshop",
+  "version": "1.0.0",
+  "scripts": {
+    "cy:open": "./node_modules/.bin/cypress open",
+    "cy:run": "./node_modules/.bin/cypress run",
+    "postinstall": "git submodule update --init --recursive --remote && cd trelloapp && npm install -s",
+    "start": "cd trelloapp && npm start"
+  },
+  "keywords": [
+    "cypress"
+  ],
+  "author": "Filip Hric (https://filiphric.com/)",
+  "license": "ISC",
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^12.2.0",
+    "@bahmutov/cy-api": "^2.2.0",
+    "@cypress/webpack-preprocessor": "^5.12.2",
+    "@types/node": "^18.7.16",
+    "axios": "^0.27.2",
+    "chai-json-schema": "^1.5.1",
+    "cy-spok": "^1.5.2",
+    "cypress": "^10.7.0",
+    "ts-loader": "^9.3.1",
+    "typescript": "^4.8.3"
+  },
+  "devDependencies": {
+    "tsconfig-paths-webpack-plugin": "^4.0.0"
+  }
+}

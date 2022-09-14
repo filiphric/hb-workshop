@@ -1,0 +1,21 @@
+{
+  "boards": [
+    {
+      "name": "board created via API",
+      "user": 0,
+      "starred": false,
+      "created": "2022-09-13",
+      "id": 1
+    }
+  ],
+  "cards": [],
+  "lists": [],
+  "users": [
+    {
+      "email": "filip@example.com",
+      "password": "$2a$10$JHEKtyoSKCgxTixAFc/.N.f1bVZPVM/Idka6T6HO98y51FxC2weZa",
+      "welcomeEmail": false,
+      "id": 1
+    }
+  ]
+}
