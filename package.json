@@ -5,7 +5,9 @@
     "cy:open": "./node_modules/.bin/cypress open",
     "cy:run": "./node_modules/.bin/cypress run",
     "postinstall": "git submodule update --init --recursive --remote && cd trelloapp && npm install -s",
-    "start": "cd trelloapp && npm start"
+    "start": "cd trelloapp && npm start",
+    "test:smoke": "cypress run --env grepTags='@smoke'",
+    "lint": "tsc --noEmit --pretty"
   },
   "keywords": [
     "cypress"
@@ -21,6 +23,7 @@
     "chai-json-schema": "^1.5.1",
     "cy-spok": "^1.5.2",
     "cypress": "^10.7.0",
+    "cypress-grep": "^3.0.3",
     "ts-loader": "^9.3.1",
     "typescript": "^4.8.3"
   },

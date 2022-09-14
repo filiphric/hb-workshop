@@ -1,29 +1,40 @@
+import { Selectors } from '../@types/selectors';
 
-export { }
 declare global {
   namespace Cypress {
     interface Chainable {
-      /**
-       * Add a new board via api
-       * @example cy.getByData('board-create')
-       */
-      getByData(selector: string): Chainable<Element>
+      getByData(
+        input: Selectors
+      ): Chainable<any>
     }
   }
 }
 
-Cypress.Commands.add('getByData', (selector) => {
+/**
+ * Gets element using data-cy selector
+ * @param input data-cy attribute value
+ * @example
+ * // this command
+ * cy.getByData('header')
+ * // will select this element
+ * <div data-cy="header">
+ * </div>
+ *
+ */
+Cypress.Commands.add('getByData', (
+  input: Selectors
+) => {
 
   Cypress.log({
-    displayName: 'dataCy',
-    message: selector,
     consoleProps() {
       return {
-        selector
-      }
-    }
-  })
+        selector: input,
+      };
+    },
+    displayName: 'getByData',
+    name: 'Get by [data-cy] attribute',
+  });
 
-  cy.get(`[data-cy=${selector}]`, { log: false })
+  return cy.get(`[data-cy='${input}']`);
 
-})
+});

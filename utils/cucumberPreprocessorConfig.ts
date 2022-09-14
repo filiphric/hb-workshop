@@ -1,3 +1,4 @@
+/// <reference types="cypress" />
 import * as webpack from "@cypress/webpack-preprocessor";
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 

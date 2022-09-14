@@ -15,11 +15,16 @@ module.exports = defineConfig({
       on('task', {
         seedDatabase
       })
+      require('cypress-grep/src/plugin')(config);
       await addCucumberPreprocessorPlugin(on, config);
       await cucumberPreprocessorConfig(on, config)
       await createDefaultUser(on, config)
       return config
     },
-    baseUrl: 'http://localhost:3000'
+    baseUrl: 'http://localhost:3000',
+    env: {
+      grepFilterSpecs: true,
+      grepOmitFiltered: true
+    }
   }
 });
