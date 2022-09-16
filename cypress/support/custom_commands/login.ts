@@ -17,7 +17,15 @@ declare global {
 
 Cypress.Commands.add('login', (email: string, password: string) => {
 
-  cy.get('[data-cy=login-email]').type(email)
-  cy.get('[data-cy=login-password]').type(`${password}{enter}`)
+  cy.session('login', () => {
+
+    cy.visit('/login')
+
+    cy.get('[data-cy=login-email]').type(email)
+    cy.get('[data-cy=login-password]').type(`${password}{enter}`)
+
+    cy.location('pathname').should('eq', '/')
+
+  })
 
 });

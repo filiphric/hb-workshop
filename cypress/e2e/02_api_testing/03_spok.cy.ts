@@ -1,6 +1,8 @@
-before(() => {
-  cy.request('POST', '/api/reset')
-});
+import spok from 'cy-spok'
+
+// before(() => {
+//   cy.request('POST', '/api/reset')
+// });
 
 it('tests the whole response', () => {
 
@@ -19,8 +21,13 @@ it('tests the whole response', () => {
     body: {
       name: boardName
     }
-  }).then(({ body }) => {
-    expect(body).to.deep.eq(expectedBody)
-  })
+  }).should(spok({
+    body: {
+      name: boardName,
+      user: 0,
+      id: spok.type('number')
+    },
+    status: 201
+  }))
 
 });

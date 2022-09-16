@@ -6,7 +6,7 @@ before(() => {
 
 it('tests the lists', () => {
 
-  cy.request({
+  cy.api({
     method: 'GET',
     url: '/api/lists',
     headers: {

@@ -22,6 +22,8 @@ module.exports = defineConfig({
       return config
     },
     baseUrl: 'http://localhost:3000',
+    experimentalSessionAndOrigin: true,
+    experimentalWebKitSupport: true,
     env: {
       grepFilterSpecs: true,
       grepOmitFiltered: true
